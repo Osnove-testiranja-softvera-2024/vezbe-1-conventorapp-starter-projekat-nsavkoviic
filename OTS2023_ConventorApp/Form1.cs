@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OTS2023_ConventorApp.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,18 +22,21 @@ namespace OTS2023_ConventorApp
         {
             if(radioBtnMass.Checked)
             {
-                double unosKonvert = int.Parse(txtUnos.Text) / 2.54;
-
-                txtIspis.Text = unosKonvert.ToString();
+                Mass mass = new Mass();
+                txtIspis.Text = mass.Convert(int.Parse(txtUnos.Text)).ToString();
+                txtIspis.Enabled = false;
 
             }
             else if(radioBtnLength.Checked) 
             {
                 double unosKonvert = int.Parse(txtUnos.Text) / 2.2046;
 
-                txtIspis.Text = unosKonvert.ToString();   
+                Length length = new Length();
+                txtIspis.Text = length.Convert(int.Parse(txtUnos.Text)).ToString();
+                txtIspis.Enabled = false;
+
             }
-            
+
         }
 
         private void radioBtnLength_CheckedChanged(object sender, EventArgs e)
