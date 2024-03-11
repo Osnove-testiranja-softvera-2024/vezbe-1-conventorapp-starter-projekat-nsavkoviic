@@ -7,21 +7,22 @@ using System.Threading.Tasks;
 
 namespace OTS2023_ConventorApp.Classes
 {
-    public class Mass : IConvert
+    public class Money : IConvert
     {
         public double Convert(double number)
         {
-            return Math.Round(number / 2.2, 3);
+            return number * 117.5;
         }
-        public double ConvertArray(string array)
+        public double ConvertArray(string numbers)
         {
-            string[] values = array.Split(',');
+            string[] values = numbers.Split(',');
 
             double number = 0;
-            for(int i=0; i<values.Length; i++)
+            for (int i = 0; i < values.Length - 1; i++)
             {
                 number += Double.Parse(values[i]);
             }
+
             return Convert(number);
         }
     }

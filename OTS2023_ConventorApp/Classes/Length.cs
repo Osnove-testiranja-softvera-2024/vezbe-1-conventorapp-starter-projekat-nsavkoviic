@@ -13,5 +13,16 @@ namespace OTS2023_ConventorApp.Classes
         {
             return Math.Round(number / 3.281, 3);
         }
+        public double ConvertArray(string array)
+        {
+            List<String> values = array.Split(',').ToList();
+            double[] numbers = Classes.Utilities.ConvertArray(values);
+            double number = 0;
+            for(int i=0; i<values.Count; i++)
+            {
+                number += numbers[i];
+            }
+            return number;
+        }
     }
 }

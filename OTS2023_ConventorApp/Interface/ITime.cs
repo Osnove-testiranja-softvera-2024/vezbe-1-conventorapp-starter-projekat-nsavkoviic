@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace OTS2023_ConventorApp.Interface
 {
-    public interface IConvert
+    internal interface ITime
     {
-        double Convert(double value);
-        
-        double ConvertArray(string value);
+        double ConvertHours(double days);
+        double ConvertMinutes(double days);
+        double ConvertSeconds(double days);
+
     }
 }
