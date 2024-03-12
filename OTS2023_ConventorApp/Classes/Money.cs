@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OTS2023_ConventorApp.Classes
+namespace OTS2023_ConventorApp
 {
     public class Money : IConvert
     {
@@ -18,12 +18,12 @@ namespace OTS2023_ConventorApp.Classes
             string[] values = numbers.Split(',');
 
             double number = 0;
-            for (int i = 0; i < values.Length - 1; i++)
+            for (int i = 0; i < values.Length; i++)
             {
-                number += Double.Parse(values[i]);
+                number += Convert(Double.Parse(values[i]));
             }
 
-            return Convert(number);
+            return number;
         }
     }
 }

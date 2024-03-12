@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OTS2023_ConventorApp.Classes
+namespace OTS2023_ConventorApp
 {
     public class Time : ITime
     {
@@ -21,7 +21,7 @@ namespace OTS2023_ConventorApp.Classes
         public double ConvertSeconds(double days)
         {
             double pom = 1;
-            for(int i=0; i<2; i++)
+            for (int i = 0; i < 2; i++)
             {
                 pom = pom * 60;
             }

@@ -9,6 +9,8 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Resources.ResXFileRef;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace OTS2023_ConventorApp
@@ -22,23 +24,130 @@ namespace OTS2023_ConventorApp
 
         private void btnConvert_Click(object sender, EventArgs e)
         {
-            if(radioBtnMass.Checked)
+            if (radioBtnMass.Checked)
             {
                 Mass mass = new Mass();
-                txtIspis.Text = mass.Convert(int.Parse(txtUnos.Text)).ToString();
-                txtIspis.Enabled = false;
+                if (radioBtnArrayV.Checked)
+                {
+                    try
+                    {
+                        txtIspis.Text = mass.ConvertArray(txtUnos.Text).ToString();
+                        txtIspis.Enabled = false;
 
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Invalid input! Try again with numbered value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        txtIspis.Text = mass.Convert(Double.Parse(txtUnos.Text)).ToString();
+                        txtIspis.Enabled = false;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Invalid input! Try again with numbered value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-            else if(radioBtnLength.Checked) 
+            else if (radioBtnLength.Checked)
             {
-                double unosKonvert = int.Parse(txtUnos.Text) / 2.2046;
-
                 Length length = new Length();
-                txtIspis.Text = length.Convert(int.Parse(txtUnos.Text)).ToString();
-                txtIspis.Enabled = false;
-
+                if (radioBtnArrayV.Checked)
+                {
+                    try
+                    {
+                        txtIspis.Text = length.ConvertArray(txtUnos.Text).ToString();
+                        txtIspis.Enabled = false;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Invalid input! Try again with numbered value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        txtIspis.Text = length.Convert(Double.Parse(txtUnos.Text)).ToString();
+                        txtIspis.Enabled = false;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Invalid input! Try again with numbered value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-
+            else if (radioBtnMoney.Checked)
+            {
+                Money money = new Money();
+                if (radioBtnArrayV.Checked)
+                {
+                    try
+                    {
+                        txtIspis.Text = money.ConvertArray(txtUnos.Text).ToString();
+                        txtIspis.Enabled = false;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Invalid input! Try again with numbered value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        txtIspis.Text = money.Convert(Double.Parse(txtUnos.Text)).ToString();
+                        txtIspis.Enabled = false;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Invalid input! Try again with numbered value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else if (radioBtnTime.Checked)
+            {
+                Time time = new Time();
+                try
+                {
+                    if (radioBtnHours.Checked)
+                    {
+                        txtIspis.Text = time.ConvertHours(Double.Parse(txtUnos.Text)).ToString();
+                        txtIspis.Enabled = false;
+                    }
+                    else if (radioBtnMinutes.Checked)
+                    {
+                        txtIspis.Text = time.ConvertMinutes(Double.Parse(txtUnos.Text)).ToString();
+                        txtIspis.Enabled = false;
+                    }
+                    else if (radioBtnSeconds.Checked)
+                    {
+                        txtIspis.Text = time.ConvertSeconds(Double.Parse(txtUnos.Text)).ToString();
+                        txtIspis.Enabled = false;
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Invalid input! Try again with numbered value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (radioBtnCustomMoney.Checked)
+            {
+                CustomMoney customMoney = new CustomMoney();
+                try
+                {
+                    txtIspis.Text = customMoney.ConvertCustomMoney(txtUnos.Text).ToString();
+                    txtIspis.Enabled = false;
+                }
+                catch
+                {
+                    MessageBox.Show("Invalid input! Try again with numbered value!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void radioBtnLength_CheckedChanged(object sender, EventArgs e)
@@ -101,7 +210,5 @@ namespace OTS2023_ConventorApp
             txtUnos.Text = "";
             txtIspis.Text = "";
         }
-
-        
     }
 }

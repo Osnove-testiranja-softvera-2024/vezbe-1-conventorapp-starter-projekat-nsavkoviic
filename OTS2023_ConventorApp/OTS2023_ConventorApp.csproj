@@ -46,8 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CustomMoney.cs" />
     <Compile Include="Classes\Length.cs" />
     <Compile Include="Classes\Mass.cs" />
+    <Compile Include="Classes\Money.cs" />
+    <Compile Include="Classes\Time.cs" />
+    <Compile Include="Classes\Utilities.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +59,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Interface\IConvert.cs" />
+    <Compile Include="Interface\ICustomMoney.cs" />
+    <Compile Include="Interface\ITime.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

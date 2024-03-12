@@ -107,7 +107,7 @@
             // 
             // txtUnos
             // 
-            this.txtUnos.Location = new System.Drawing.Point(139, 214);
+            this.txtUnos.Location = new System.Drawing.Point(180, 212);
             this.txtUnos.Margin = new System.Windows.Forms.Padding(4);
             this.txtUnos.Name = "txtUnos";
             this.txtUnos.Size = new System.Drawing.Size(256, 22);
@@ -115,7 +115,7 @@
             // 
             // txtIspis
             // 
-            this.txtIspis.Location = new System.Drawing.Point(139, 264);
+            this.txtIspis.Location = new System.Drawing.Point(180, 264);
             this.txtIspis.Margin = new System.Windows.Forms.Padding(4);
             this.txtIspis.Name = "txtIspis";
             this.txtIspis.Size = new System.Drawing.Size(256, 22);
@@ -123,7 +123,7 @@
             // 
             // btnConvert
             // 
-            this.btnConvert.Location = new System.Drawing.Point(314, 396);
+            this.btnConvert.Location = new System.Drawing.Point(361, 333);
             this.btnConvert.Margin = new System.Windows.Forms.Padding(4);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(215, 63);
@@ -267,7 +267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 492);
+            this.ClientSize = new System.Drawing.Size(602, 418);
             this.Controls.Add(this.gbxSegment);
             this.Controls.Add(this.gbxTime);
             this.Controls.Add(this.gbxConverter);

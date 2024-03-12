@@ -12,7 +12,7 @@ namespace OTS2023_ConventorApp.Classes
         {
             int nums = array.Count;
             double[] numbers = new double[nums];
-            for(int i = 0; i < nums; i++)
+            for (int i = 0; i < nums; i++)
             {
                 numbers[i] = Double.Parse(array[0]);
                 array.RemoveAt(0);
